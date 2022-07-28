@@ -1,0 +1,86 @@
+.fuera,
+.jugador1,
+.jugador2,
+.again {
+    color: white;
+    text-decoration: none;
+    background-image: linear-gradient(to left, #5e43dd, #7763e3);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'HelveticaNeue', sans-serif;
+    padding: 2% 6%;
+    border-radius: 10%;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-style: none;
+}
+
+.fuera {
+    position: absolute;
+    display: inline-block;
+    left: 2%;
+    padding: 2% 5%;
+    top: 2%;
+}
+
+.jugador1,
+.jugador2,
+.again {
+    padding: 3% 6%;
+    font-size: 14px;
+}
+
+.jugador1 {
+    margin-right: 15%;
+}
+
+.again {
+    padding: 2% 4%;
+}
+
+#quien {
+    margin-top: 45%;
+    text-align: center;
+}
+
+#quien h1,
+.ganador h1 {
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 15%;
+    font-size: 26px;
+}
+
+.ganador {
+    margin-top: 45%;
+    text-align: center;
+}
+
+@media screen and (min-aspect-ratio: 13/9) {
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+    .fuera {
+        padding: 1% 3%;
+    }
+
+    #quien {
+        margin-top: 13%;
+    }
+
+    .jugador1,
+    .jugador2,
+    .again {
+        padding: 2% 5%;
+    }
+
+    .ganador {
+        margin-top: 13%;
+    }
+}

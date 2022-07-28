@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <script src="https://kit.fontawesome.com/a253af0358.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="pong.css">
+    <title>Pong</title>
+</head>
+
+<body>
+    <canvas id="pong"></canvas>
+
+    <a href="../juegos.html" class="fuera" onclick="salir()">Salir</a>
+
+    <div id="quien">
+        <h1>¿Quién juega?</h1>
+    </div>
+
+    <div class="ganador" style="display: none;">
+        <h1></h1>
+        <button class="again" onclick="empezar()">Volver a jugar</button>
+    </div>
+    <!--Acá me va a crear una caja donde va a estar el juego-->
+    <script src="../../js/juegos.js"></script>
+    <script src="pong.js"></script>
+
+</body>
+
+</html>

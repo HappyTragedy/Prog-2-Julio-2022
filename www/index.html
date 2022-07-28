@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Hello World</title>
+    <script src="https://kit.fontawesome.com/a253af0358.js" crossorigin="anonymous"></script>
+</head>
+
+<body onload="checkPlayers()">
+
+    <h1 class="primerH1">Bienvenido</h1>
+
+    <div class="ingresa">
+
+        <div class="players">
+            <label class="datos">Crea un nuevo jugador</label>
+        </div>
+
+
+        <div id="fotito">
+            <label class="datos">Agrega una imagen de perfil</label>
+            <i class="fa-solid fa-user" style="display: block;"></i>
+            <img id="foto" src="" alt="foto" style="width: 20%; display: none;">
+            <button class="wiski" onclick="takePicture()">
+                <i class="fa-solid fa-camera"></i>
+            </button>
+        </div>
+    </div>
+
+    <input class="boton" type="submit" value="Crear jugador" onclick="done()">
+
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

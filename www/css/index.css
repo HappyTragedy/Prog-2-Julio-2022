@@ -1,0 +1,469 @@
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;
+    /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;
+    /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;
+    user-select: none;
+    /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color: #0b0518;
+    font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 12px;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    /* Padding to avoid the "unsafe" areas behind notches in the screen */
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+    text-transform: uppercase;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Portrait layout (default) */
+.app {
+    background: url(../img/logo.png) no-repeat center top;
+    /* 170px x 200px */
+    position: absolute;
+    /* position in the center of the screen */
+    left: 50%;
+    top: 50%;
+    height: 50px;
+    /* text area height */
+    width: 225px;
+    /* text area width */
+    text-align: center;
+    padding: 180px 0px 0px 0px;
+    /* image height is 200px (bottom 20px are overlapped with text) */
+    margin: -115px 0px 0px -112px;
+    /* offset vertical: half of image height and text area height */
+    /* offset horizontal: half of text area width */
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position: left center;
+        padding: 75px 0px 75px 170px;
+        /* padding-top + padding-bottom + text area = image height */
+        margin: -90px 0px 0px -198px;
+        /* offset vertical: half of image height */
+        /* offset horizontal: half of image width and text area width */
+    }
+}
+
+.event {
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-size: 12px;
+    margin: 0px 30px;
+    padding: 2px 0px;
+}
+
+.event.listening {
+    background-color: #333333;
+    display: block;
+}
+
+.event.received {
+    background-color: #4B946A;
+    display: none;
+}
+
+#deviceready.ready .event.listening {
+    display: none;
+}
+
+#deviceready.ready .event.received {
+    display: block;
+}
+
+@keyframes fade {
+    from {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1.0;
+    }
+}
+
+.blink {
+    animation: fade 3000ms infinite;
+    -webkit-animation: fade 3000ms infinite;
+}
+
+
+
+@media screen and (max-aspect-ratio: 13/9) {
+
+    form {
+        text-align: center;
+    }
+
+    .fuera,
+    .perfil {
+        color: black;
+    }
+
+    #imagen {
+        margin: 0 auto;
+        width: 35%;
+    }
+
+    #imagen img {
+        width: 100%;
+        border-radius: 50%;
+    }
+
+    .dato {
+        font-size: 1em;
+    }
+
+    #foto img {
+        cursor: pointer;
+        width: 5%;
+    }
+
+    #avatar {
+        margin: 0 auto;
+    }
+
+    .players {
+        width: 30vw;
+        height: 20vh;
+        margin: 0 auto;
+    }
+
+    .players {
+        width: 75vw;
+        height: 20vh;
+        background-color: #261f30;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5%;
+        margin-bottom: 15%;
+        border-radius: 6%;
+        padding: 4% 0% 4% 0%;
+    }
+
+    .namePlayer,
+    .nickPlayer {
+        border: none;
+        background-color: #382f44;
+    }
+
+    .ingresa,
+    .botonIngreso {
+        text-align: center;
+        margin-top: 8%;
+    }
+
+    .ingresa h1 {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 32px;
+        margin-bottom: 30%;
+    }
+
+    .usuario {
+        margin-top: 0.5em;
+        font-family: cursive;
+        margin-top: 0.5em;
+        font-family: cursive;
+        margin-bottom: 0.5em;
+    }
+
+    .wiski,
+    .boton {
+        display: block;
+        margin: 0 auto;
+        width: 40vw;
+        background-image: linear-gradient(to left, #5e43dd, #7763e3);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        padding: 3% 5%;
+        border-radius: 6%;
+        border-style: none;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+
+    .boton {
+        margin-top: 1%;
+        font-size: 1.1em;
+        border-radius: 5%;
+    }
+
+    .wiski {
+        padding: 2% 5%;
+    }
+
+    .wiski img {
+        width: 25%;
+    }
+
+    /*De acá para arriba es de index.html*/
+
+
+    #names {
+        padding: 20% 3% 10% 9%;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        align-items: center;
+        justify-items: end;
+    }
+
+    .anuncioJugadores {
+        font-size: 15px !important;
+        font-weight: 500;
+        color: dimgrey;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .jugadores {
+        font-size: 18px !important;
+        font-weight: 800;
+        color: white;
+        line-height: 2;
+    }
+
+
+    .contJuegos {
+        display: grid;
+        grid-template-columns: repeat(3, 33%);
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        margin: 0 auto;
+        background-color: #261f30;
+        height: 20vh;
+        width: 85vw;
+        border-radius: 3%;
+    }
+
+    .juegos {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    .perfil {
+        width: 75%;
+        text-align: right;
+    }
+
+    .fa-user-pen {
+        font-size: 26px;
+        padding: 20px 20px 20px 0px;
+        color: dimgrey !important;
+    }
+
+    .juego1,
+    .juego2,
+    .juego3 {
+        margin: 0 auto;
+        display: block;
+        padding: 3% 10%;
+        margin-top: 5%;
+    }
+
+    .juego2 {
+        padding-bottom: 8%;
+    }
+
+    h2 {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: white;
+        padding-left: 8%;
+        font-size: 18px;
+        font-weight: 800;
+        margin-top: 15%;
+    }
+
+    table,
+    td,
+    th {
+        text-align: center;
+    }
+
+    td {
+        border-bottom: solid 1px #3b304b;
+    }
+
+    th {
+        color: rgb(255, 255, 255);
+    }
+
+    tr {
+        color: rgb(255, 255, 255);
+        font-weight: 500;
+        height: 50px;
+        box-shadow: 0px 15px 30px 1px #261f30;
+    }
+
+    /* Set border-radius on the top-left and bottom-left of the first table data on the table row*/
+    td:first-child,
+    th:first-child {
+        border-radius: 15px 0 0 15px;
+    }
+
+    /* Set border-radius on the top-right and bottom-right of the last table data on the table row*/
+    td:last-child,
+    th:last-child {
+        border-radius: 0 15px 15px 0;
+    }
+
+    table {
+        border-collapse: separate;
+        width: 75vw;
+        margin: 0 auto;
+        align-self: center;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        border-spacing: 0px 10px;
+    }
+
+    tbody {
+        height: 30vh;
+        background-color: #382f44;
+    }
+
+    .noBorder {
+        border-bottom-style: none;
+    }
+
+    /*De acá para arriba es de juegos.html*/
+
+    #img,
+    .img {
+        font-family: cursive;
+        width: 35%;
+        margin: 0 auto;
+    }
+
+    #img input {
+        width: 100%;
+        border-radius: 50%;
+    }
+
+    #perfilE {
+        text-align: center;
+        padding: 20% 0% 15% 0%;
+    }
+
+    h1 {
+        text-align: center;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: white;
+        margin: 20% 0% 32% 0%;
+    }
+
+    .contEditar {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        margin-bottom: 20%;
+    }
+
+    .j1i,
+    .j2i {
+        width: 100%;
+        border-radius: 35%;
+    }
+
+    .nombre1,
+    .nombre2 {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .j1b,
+    .j2b,
+    .cancel,
+    .foto,
+    .botonEdit,
+    .cancelarEdit,
+    .exit {
+        background-image: linear-gradient(to left, #5e43dd, #7763e3);
+        font-family: system-ui;
+        padding: 4% 10%;
+        border-radius: 10%;
+        border-style: none;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+
+    .cancel,
+    .exit {
+        display: inline-block;
+        padding: 3% 7%;
+        margin-left: 12%;
+    }
+
+    /*De acá para arriba es de editar.html*/
+
+    #perfil {
+        display: grid;
+        justify-content: center;
+        justify-items: center;
+    }
+
+    #fotito {
+        margin: 20% 0%;
+        width: 100%;
+        display: grid;
+        justify-items: center;
+    }
+
+    #foto{
+        display: none;
+    }
+
+    .fa-user{
+        font-size: 32px;
+        margin: 7% 0% 7% 0%;
+    }
+
+    .foto {
+        margin: 0 auto;
+        text-align: center;
+        border-radius: 10%;
+        padding: 3% 14%;
+    }
+
+    .fa-camera {
+        font-size: 20px;
+        color: white;
+    }
+
+    .contDatos {
+        display: grid;
+        justify-items: center;
+        margin-top: 10%;
+    }
+
+    .datos {
+        font-size: 15px;
+        font-family: system-ui;
+        text-transform: none;
+    }
+
+    .botonEdit,
+    .cancelarEdit {
+        padding: 3% 10%;
+        margin-top: 10%;
+    }
+
+    .botonEdit {
+        margin-left: 17%;
+    }
+
+    .cancelarEdit {
+        margin-left: 4%;
+    }
+}

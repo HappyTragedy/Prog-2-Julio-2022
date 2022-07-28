@@ -1,0 +1,148 @@
+body {
+    -webkit-touch-callout: none;
+    /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;
+    /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;
+    user-select: none;
+    /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color: #0b0518;
+    font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    /* Padding to avoid the "unsafe" areas behind notches in the screen */
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+    width: 100%;
+    overflow: hidden;
+}
+
+#principal {
+    margin: 6% 3%;
+}
+
+.fuera,
+#reinicio {
+    color: white;
+    text-decoration: none;
+    background-image: linear-gradient(to left, #5e43dd, #7763e3);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'HelveticaNeue', sans-serif;
+    padding: 2% 6%;
+    border-radius: 10%;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-style: none;
+}
+
+.fuera{
+    position: absolute;
+    top: 2%;
+}
+
+#principal h1 {
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0 auto;
+    text-align: center;
+    margin: 35% 0% 12% 0%;
+    font-size: 26px;
+}
+
+.juegan {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    justify-items: center;
+    margin-bottom: 15%;
+}
+
+.jugador1,
+.jugador2 {
+    width: 7%;
+    padding: 0.5%;
+    display: inline-block;
+    text-align: center;
+}
+
+table {
+    text-align: center;
+    border-collapse: separate;
+    width: 75vw;
+    margin: 0 auto;
+    align-self: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'HelveticaNeue', sans-serif;
+    padding-bottom: 15%;
+}
+
+tbody {
+    background-color: #382f44;
+    height: 40vh;
+}
+
+tr,
+td {
+    width: 25px;
+    height: 25px;
+    font-size: 20px;
+}
+
+#reinicio {
+    display: block;
+    margin: 0 auto;
+    font-size: 14px;
+    padding: 3% 6%;
+}
+
+@media screen and (min-aspect-ratio: 13/9) {
+
+    .fuera {
+        padding: 2% 4%;
+        font-size: 14px;
+    }
+
+    #principal {
+        margin: 1% 2%;
+    }
+
+    #principal h1 {
+        margin: 1% 0% 10% 0%;
+        font-size: 30px;
+    }
+
+    .juegan {
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: repeat(2, 50%);
+        margin-bottom: 15%;
+        width: 15%;
+        position: absolute;
+    }
+
+    .jugador1,
+    .jugador2 {
+        font-size: 18px;
+        padding: 8%;
+        width: 0;
+    }
+
+    #reinicio {
+        font-size: 16px;
+        position: absolute;
+        top: 75%;
+        left: 10%;
+        padding: 2% 5%;
+    }
+
+    table {
+        width: 45vw;
+        padding-bottom: 15%;
+        position: absolute;
+        top: 30%;
+        left: 47%;
+    }
+
+    tbody {
+        height: 65vh;
+    }
+
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <script src="https://kit.fontawesome.com/a253af0358.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="dice.css">
+    <title>Generala</title>
+</head>
+
+<body>
+    <a href="#" class="fuera" onclick="salir()">Salir</a>
+    <div class="player">
+        <div class="Player1"></div>
+        <div class="Player2"></div>
+    </div>
+
+    <div class="change">
+        <div class="turn"></div>
+        <button type="button" class="rollAgain" onclick="rollDice()" style="display: none;">Roll Again</button>
+    </div>
+    <img src="cup.png" class="cup" onclick="rollDice()">
+    <div id="container"></div>
+
+    <table class="tabla">
+        <thead>
+            <tr>
+                <th>Juego</th>
+                <th class="j1"></th>
+                <th class="j2"></th>
+            </tr>
+        </thead>
+        <tbody id="score">
+            <tr onclick="tickScore(0);">
+                <th>1</th>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr onclick="tickScore(1);">
+                <th>2</th>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr onclick="tickScore(2);">
+                <th>3</th>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr onclick="tickScore(3);">
+                <th>4</th>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr onclick="tickScore(4);">
+                <th>5</th>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr onclick="tickScore(5);">
+                <th>6</th>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr onclick="tickScore(6);">
+                <th>E</th>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr onclick="tickScore(7);">
+                <th>F</th>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr onclick="tickScore(8);">
+                <th>P</th>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr onclick="tickScore(9);">
+                <th>G</th>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr onclick="tickScore(10);">
+                <th>D</th>
+                <td> </td>
+                <td> </td>
+            </tr>
+            <tr class="total">
+                <th>Total</th>
+                <td class="1"> </td>
+                <td class="2"> </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="winner">
+        <div class="thisWinner">
+            <h2 id="showWinner"></h2>
+        </div>
+        <button type="button" class="restart" onclick="restart()">Reiniciar</button>
+    </div>
+
+    <script src="../../js/juegos.js"></script>
+    <script src="dice.js"></script>
+</body>
+
+</html>

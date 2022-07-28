@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <title>title</title>
+    <script src="https://kit.fontawesome.com/a253af0358.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+</head>
+
+<body onload="loadPlayers()">
+
+    <div id="names">
+        <a href="editar.html" class="edPerfil">
+            <i class="fa-solid fa-user-pen"></i>
+        </a>
+    </div>
+    <div class="contGral">
+        <h2 class= "tituloJ" style="display: none;">Juegos</h2>
+        <div class="contJuegos">
+            <article class="juegos">
+                <input class="juego1" type="image" src="../img/tictactoe.png" style="width: 60%;" onclick="tateti()">
+                <label>Ta Te Ti</label>
+            </article>
+            <article class="juegos">
+                <input class="juego2" type="image" src="../img/dice.png" style="width: 60%;" onclick="generala()">
+                <label>Generala</label>
+            </article>
+            <article class="juegos">
+                <input class="juego3" type="image" src="../img/pong.png" style="width: 58%;" onclick="pong()">
+                <label>Pong</label>
+            </article>
+        </div>
+
+        <div class="tableContent">
+            <h2>Puntuación</h2>
+            <table>
+                <tr>
+                    <th class="none"></th>
+                    <th class="p1"></th>
+                    <th class="p2"></th>
+                </tr>
+                <tr>
+                    <td>Ta-Te-Ti</td>
+                    <td class="game1T"></td>
+                    <td class="game1T"></td>
+                </tr>
+                <tr>
+                    <td>Generala</td>
+                    <td class="game1G"></td>
+                    <td class="game1G"></td>
+                </tr>
+                <tr>
+                    <td>Pong</td>
+                    <td class="game1P"></td>
+                    <td class="game1P"></td>
+                </tr>
+                <tr class="noBorder">
+                    <td>Total</td>
+                    <td class="game1Total"></td>
+                    <td class="game1Total"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/juegos.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/editar.js"></script>
+</body>
+
+</html>

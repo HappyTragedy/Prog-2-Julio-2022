@@ -1,0 +1,217 @@
+body {
+	-webkit-touch-callout: none;
+	/* prevent callout to copy image, etc when tap to hold */
+	-webkit-text-size-adjust: none;
+	/* prevent webkit from resizing text to fit */
+	-webkit-user-select: none;
+	user-select: none;
+	/* prevent copy paste, to allow, change 'none' to 'text' */
+	background-color: #0b0518;
+	font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
+	height: 100vh;
+	margin: 0px;
+	padding: 0px;
+	/* Padding to avoid the "unsafe" areas behind notches in the screen */
+	padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+	width: 100%;
+	overflow: hidden;
+}
+
+.fuera,
+.rollAgain,
+.restart {
+	color: white;
+	text-decoration: none;
+	background-image: linear-gradient(to left, #5e43dd, #7763e3);
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'HelveticaNeue', sans-serif;
+	padding: 2% 6%;
+	border-radius: 10%;
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	border-style: none;
+}
+
+.fuera {
+	position: absolute;
+	top: 2%;
+}
+
+.player {
+	display: grid;
+	grid-template-columns: repeat(2, 50%);
+	justify-items: center;
+	margin-top: 30%;
+	font-family: system-ui;
+	font-size: 24px;
+	font-weight: 500;
+}
+
+.Player1,
+.Player2 {
+	display: inline-block;
+	text-align: center;
+}
+
+.turn {
+	text-align: center;
+	font-family: system-ui;
+	font-weight: 100;
+	margin: 5% 0% 5% 0%;
+}
+
+.rollAgain {
+	margin: 0 auto;
+}
+
+#container {
+	text-align: center;
+	margin: 20% 0% 10% 0%;
+}
+
+.cup {
+	width: 35%;
+	display: block;
+	margin: 0 auto;
+	cursor: pointer;
+	margin-top: 25%;
+}
+
+.change {
+	margin-top: 18%;
+}
+
+.dices {
+	display: inline;
+}
+
+.dices img {
+	max-width: 100%;
+	width: 10%;
+	cursor: pointer;
+	margin: 2%;
+}
+
+table {
+	background-color: #382f44;
+	margin: 0 auto;
+	width: 85vw;
+	border-collapse: collapse;
+}
+
+tbody,
+thead {
+	font-size: 14px;
+}
+
+th,
+td {
+	border: 0.5px solid #0b0518;
+	font-family: system-ui;
+	font-weight: 400;
+	height: 25px;
+}
+
+th {
+	padding: 0.2em;
+}
+
+td {
+	padding: 0.2em;
+	text-align: center;
+}
+
+.selectedDice {
+	overflow: hidden;
+	border: 2px solid red;
+}
+
+.clicked {
+	background-color: #524463;
+}
+
+.winner {
+	margin: 50% 0% 0% 0%;
+	text-align: center;
+}
+
+.thisWinner {
+	width: 75%;
+	background-color: #382f44;
+	border-radius: 10%;
+	margin: 0% 0% 15% 12%;
+}
+
+#showWinner {
+	padding: 0.5em;
+	font-weight: 600;
+	font-size: 2em;
+	color: white;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.restart {
+	font-size: 14px;
+	padding: 3% 7%;
+}
+
+
+@media screen and (min-aspect-ratio: 13/9) {
+
+	.fuera {
+		top: 1%;
+		left: 1%;
+	}
+
+	.player {
+		margin-top: 13%;
+		width: 30%;
+	}
+
+	.change {
+		display: grid;
+		margin-top: 0%;
+		width: 40%;
+		font-size: 22px;
+		grid-template-columns: repeat(2, 50%);
+		align-items: center;
+		margin-top: 6%;
+	}
+
+	.cup {
+		width: 15%;
+		margin-top: 2%;
+	}
+
+	.rollAgain {
+		padding: 4% 8%;
+		font-size: 14px;
+	}
+
+	#container {
+		margin: 2% 0% 10% 0%;
+		position: absolute;
+		right: 63%;
+	}
+
+	.dices img {
+		width: 13%;
+	}
+
+	table {
+		width: 40vw;
+		margin: none;
+		position: absolute;
+		left: 58%;
+		top: 7%;
+	}
+
+	tbody, thead{
+		font-size: 12px;
+	}
+
+	td,
+	th {
+		height: 21px;
+	}
+}
